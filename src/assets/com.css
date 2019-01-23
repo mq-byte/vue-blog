@@ -1,0 +1,18 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration:none;
+    out-line: none;
+    color: #409EFF;
+}
+.border-bottome6{
+    border-bottom: 1px solid #e6e6e6;
+}
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
