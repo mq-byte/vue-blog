@@ -4,11 +4,14 @@
       <el-collapse-item v-for="(v,i) in bloglists" :key="i" :title="(i+1)+ '. ' + v.type" :name="i">
         <el-card class="box-card">
           <div v-for="(v1,i1) in v.MDs" :key="i1" class="blogitems">
-            <el-alert
-              :title="v1"
-              type="success"
-              :closable="false">
-            </el-alert>
+            <router-link :to='"/blogDetail/"+v.type+"/"+v1'>
+              <el-alert
+                :title="v1"
+                type="success"
+                :closable="false">
+              </el-alert>
+            </router-link>
+            
           </div>
         </el-card>
       </el-collapse-item>

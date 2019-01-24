@@ -1,3 +1,5 @@
+import showdown from 'showdown'
+
 /**
  * Get the first item that pass the test
  * by second argument function
@@ -63,4 +65,15 @@ export function find (list, f) {
   
   export function assert (condition, msg) {
     if (!condition) throw new Error(`[vuex] ${msg}`)
+  }
+
+  export function mdToHTML(data){
+      let converter = new showdown.Converter(); //初始化转换器
+      let htmlcontent  = converter.makeHtml(data); //将MarkDown转为html格式的内容
+      return htmlcontent;
+      // document.querySelector('.mdparase').innerHTML = htmlcontent;
+      // var arrs = document.querySelectorAll('pre code');
+      // for(var i = 0;i < arrs.length;++i){
+      //     hljs.highlightBlock(arrs[i]);
+      // }
   }

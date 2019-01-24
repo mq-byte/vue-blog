@@ -1,7 +1,8 @@
-import {getbloglists} from '../../api/blogs'
+import {getbloglists,getblogDetail} from '../../api/blogs'
 
 const state = {
-  bloglists:[]
+  bloglists:[],
+  blogDetail:''
 }
 
 // getters
@@ -15,13 +16,22 @@ const actions = {
         getbloglists().then((r)=>{
             commit('initbloglists',r)
         })
+    },
+    getblog({commit},params){
+        getblogDetail(params.type,params.name).then((r)=>{
+            commit('getblog',r)
+        })
     }
 }
+
 
 // mutations
 const mutations = {
     initbloglists (state,data) {
         state.bloglists = data;
+    },
+    getblog(state,data){
+        state.blogDetail = data;
     }
 }
 

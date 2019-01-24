@@ -19,10 +19,7 @@
 </template>
 <script>
 export default {
-  name: 'itemapp',
-  components: {
-    
-  }
+  name: 'itemapp'
 }
 </script>
 
